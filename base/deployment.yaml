@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: myapp:latest   # 🔥 CI यही update करेगा
+        image: nginx:latest   # 🔥 CI यही update करेगा
         ports:
         - containerPort: 80
