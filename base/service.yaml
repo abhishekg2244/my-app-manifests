@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app
+  name: todo-service
 spec:
   selector:
-    app: my-app
+    app: todo
   ports:
   - port: 80
     targetPort: 80
