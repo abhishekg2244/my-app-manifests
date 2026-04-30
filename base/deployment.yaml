@@ -13,7 +13,7 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: my-app
+      - name: my-app2
         image: myapp:latest   # 🔥 CI यही update करेगा
         ports:
         - containerPort: 80
