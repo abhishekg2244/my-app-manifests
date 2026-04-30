@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: todo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: todo
   template:
     metadata:
       labels:
-        app: my-app
+        app: todo
     spec:
       containers:
-      - name: my-app2
-        image: nginx:latest   # 🔥 CI यही update करेगा
+      - name: todo
+        image: docker pull ghcr.io/abhishekg2244/argocd:latest   # 🔥 CI यही update करेगा
         ports:
         - containerPort: 80
