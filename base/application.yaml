@@ -7,8 +7,8 @@ spec:
   project: agency-os-team        # Assigns app to the agency-os-team Project
   source:
     repoURL: https://github.com/abhishekg2244/my-app-manifests.git  # Git repo
-    targetRevision: main        # Branch to watch
-    path: ui_approach/nginx     # Path in repo with manifests
+    targetRevision: feature/m1       # Branch to watch
+    path: base    # Path in repo with manifests
   destination:
     server: https://kubernetes.default.svc  # Target cluster, run `argocd cluster list` to see
     namespace: default          # Namespace inside that cluster
