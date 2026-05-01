@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo
+  name: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todo
+      app: nginx
   template:
     metadata:
       labels:
-        app: todo
+        app: nginx
     spec:
       containers:
-      - name: todo
-        image: ghcr.io/abhishekg2244/argocd:latest
+      - name: nginx
+        image: nginx:latest
         ports:
         - containerPort: 80
 

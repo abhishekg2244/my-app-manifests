@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1 # ArgoCD Application resource
+kind: Application               
+metadata:                                                 
+  name: todo-app        
+  namespace: argocd             
+spec:
+  project: default        
+  source:
+    repoURL: https://github.com/abhishekg2244/my-app-manifests.git  
+    targetRevision: feature/m1      
+    path: todo  
+  destination:
+    server: https://kubernetes.default.svc  
+    namespace: default          
+  syncPolicy:                   
+    automated:                  
+      prune: true                 
+      selfHeal: true              
+    syncOptions:                 
+      - CreateNamespace=true      
