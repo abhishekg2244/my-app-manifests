@@ -1,20 +1,20 @@
-apiVersion: argoproj.io/v1alpha1 # ArgoCD Application resource
-kind: Application               # Kind of resource
-metadata:                        # Metadata section                         
-  name: agency-os         # App name
-  namespace: argocd             # Must exist in ArgoCD namespace
-spec:
-  project: agency-os-team        # Assigns app to the agency-os-team Project
-  source:
-    repoURL: https://github.com/abhishekg2244/my-app-manifests.git  # Git repo
-    targetRevision: feature/m1       # Branch to watch
-    path: base    # Path in repo with manifests
-  destination:
-    server: https://kubernetes.default.svc  # Target cluster, run `argocd cluster list` to see
-    namespace: default          # Namespace inside that cluster
-  syncPolicy:                    # Sync policy settings
-    automated:                   # Enable automated sync
-      prune: true                 # Delete resources removed from Git
-      selfHeal: true              # Correct drift if resources change in cluster
-    syncOptions:                 # Additional sync options
-      - CreateNamespace=true      # Auto-create namespace if it doesn't exist
+# apiVersion: argoproj.io/v1alpha1 # ArgoCD Application resource
+# kind: Application               # Kind of resource
+# metadata:                        # Metadata section                         
+#   name: agency-os         # App name
+#   namespace: argocd             # Must exist in ArgoCD namespace
+# spec:
+#   project: agency-os-team        # Assigns app to the agency-os-team Project
+#   source:
+#     repoURL: https://github.com/abhishekg2244/my-app-manifests.git  # Git repo
+#     targetRevision: feature/m1       # Branch to watch
+#     path: base    # Path in repo with manifests
+#   destination:
+#     server: https://kubernetes.default.svc  # Target cluster, run `argocd cluster list` to see
+#     namespace: default          # Namespace inside that cluster
+#   syncPolicy:                    # Sync policy settings
+#     automated:                   # Enable automated sync
+#       prune: true                 # Delete resources removed from Git
+#       selfHeal: true              # Correct drift if resources change in cluster
+#     syncOptions:                 # Additional sync options
+#       - CreateNamespace=true      # Auto-create namespace if it doesn't exist
