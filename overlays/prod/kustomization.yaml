@@ -1,0 +1,8 @@
+resources:
+- ../../base
+
+namePrefix: prod-
+
+images:
+- name: ghcr.io/abhishekg2244/argocd
+  newTag: initial

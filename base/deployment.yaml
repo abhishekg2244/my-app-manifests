@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,9 +15,9 @@ spec:
     spec:
       containers:
       - name: todo
-        image: ghcr.io/abhishekg2244/argocd:latest   # 🔥 CI यही update करेगा
+        image: ghcr.io/abhishekg2244/argocd:initial
         ports:
         - containerPort: 80
-        
+
       imagePullSecrets:
-      - name: ghcr-secret 
+      - name: ghcr-secret
