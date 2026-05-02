@@ -13,8 +13,8 @@ data:
     username: abhishekgautam.916@gmail.com        # Email username (set as secret)
     password: ndyeqhkmbxdjhdip         # Email password (set as secret)
     host: smtp.gmail.com              # SMTP server host
-    port: 465                         # SMTP server port (SSL)
-    from: $email-username             # Sender email address
+    port: 587                        # SMTP server port (SSL)
+    from: abhishekgautam.916@gmail.com           # Sender email address
 
   # Template for Degraded health: email content when app health is degraded
   template.email-health-degraded: |
