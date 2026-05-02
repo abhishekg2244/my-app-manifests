@@ -4,13 +4,13 @@ metadata:
   name: imageupdater
   namespace: argocd
   annotations:
-    # ✅ Correct image mapping (FIX THIS)
-    argocd-image-updater.argoproj.io/image-list: imageupdater=abhishekg2244/argocd
+    # ✅ Semver with constraint
+    argocd-image-updater.argoproj.io/image-list: imageupdater=abhishekg2244/argocd:~3.0
 
-    # ✅ Correct write-back
+    # ✅ Git write-back
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
 
-    # ✅ Correct alias usage
+    # ✅ Semver strategy
     argocd-image-updater.argoproj.io/imageupdater.update-strategy: semver
 
 spec:
@@ -18,8 +18,7 @@ spec:
   source:
     repoURL: https://github.com/abhishekg2244/my-app-manifests.git
     targetRevision: feature/m1
-    path: imageUpdater/manifests
-     
+    path: imageUpdater   # 👈 IMPORTANT (root where kustomization.yaml exists)
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc

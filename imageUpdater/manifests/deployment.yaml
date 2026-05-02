@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: imageupdater
-        image: ghcr.io/abhishekg2244/argocd:v2.0.0
+        image: ghcr.io/abhishekg2244/argocd:v3.0.0
         ports:
         - containerPort: 80
 
