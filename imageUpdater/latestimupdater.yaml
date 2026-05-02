@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     # ✅ Semver with constraint
-    argocd-image-updater.argoproj.io/image-list: imageupdater=abhishekg2244/argocd:~3.0
+    argocd-image-updater.argoproj.io/image-list: imageupdater=ghcr.io/abhishekg2244/argocd:^3.0
 
     # ✅ Git write-back
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
