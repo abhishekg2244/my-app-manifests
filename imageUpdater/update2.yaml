@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: imageupdater
+  namespace: argocd
+  annotations:
+    # ✅ Correct image mapping (FIX THIS)
+    argocd-image-updater.argoproj.io/image-list: imageupdater=abhishekg2244/argocd
+
+    # ✅ Correct write-back
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
+
+    # ✅ Correct alias usage
+    argocd-image-updater.argoproj.io/imageupdater.update-strategy: semver
+
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/abhishekg2244/my-app-manifests.git
+    targetRevision: feature/m1
+    path: imageUpdater/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
