@@ -15,7 +15,7 @@ spec:
   project: default # ArgoCD project this app belongs to
   source:
     repoURL: https://github.com/abhishekg2244/my-app-manifests.git # Git repository containing the app manifests
-    targetRevision: main # Git branch, tag, or commit to track
+    targetRevision: feature/m1 # Git branch, tag, or commit to track
     path: chai-app # Path within the repo where manifests are located
   destination:
     server: https://kubernetes.default.svc # Kubernetes API server address (in-cluster)
