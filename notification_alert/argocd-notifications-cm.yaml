@@ -10,8 +10,8 @@ data:
 
   # Email service configuration: SMTP settings for sending emails
   service.email: |
-    username: $email-username         # Email username (set as secret)
-    password: $email-password         # Email password (set as secret)
+    username: abhishekgautam.916@gmail.com        # Email username (set as secret)
+    password: ndyeqhkmbxdjhdip         # Email password (set as secret)
     host: smtp.gmail.com              # SMTP server host
     port: 465                         # SMTP server port (SSL)
     from: $email-username             # Sender email address
