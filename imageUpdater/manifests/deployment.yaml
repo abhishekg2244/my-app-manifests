@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imageupdater
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imageupdater
+  template:
+    metadata:
+      labels:
+        app: imageupdater
+    spec:
+      containers:
+      - name: imageupdater
+        image: ghcr.io/abhishekg2244/argocd:v2.0.0
+        ports:
+        - containerPort: 80
+
+      imagePullSecrets:
+      - name: ghcr-secret
