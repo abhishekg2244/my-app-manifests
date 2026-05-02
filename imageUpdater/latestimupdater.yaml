@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: https://github.com/abhishekg2244/my-app-manifests.git
     targetRevision: feature/m1
-    path: imageUpdater   # 👈 IMPORTANT (root where kustomization.yaml exists)
+    path: imageUpdater/manifests   # 👈 IMPORTANT (root where kustomization.yaml exists)
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
