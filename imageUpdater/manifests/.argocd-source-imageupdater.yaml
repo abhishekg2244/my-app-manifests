@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - ghcr.io/abhishekg2244/argocd:v3.1.3
