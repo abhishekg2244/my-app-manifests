@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: todo
-        image: ghcr.io/abhishekg2244/argocd:latest
+        image: ghcr.io/abhishekg2244/argocd:f410e95fdd3ace6305daaba11790d88530378619
         ports:
         - containerPort: 80
 
